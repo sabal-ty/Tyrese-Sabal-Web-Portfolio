@@ -14,34 +14,95 @@
     font-display: swap;
 }
 
+:root {
+    /* Color Palette */
+    --midnight-black: #000000;
+    --espresso-brown: #1F150C;
+    --walnut-brown: #412D15;
+    --warm-cream: #E1DCC9;
+
+    /* Typography */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing & Borders */
+    --radius: 8px;
+    --border: 1px solid var(--walnut-brown);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+    /* Navbar height for offset */
+    --nav-height: 73px;
+}
+
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
+    padding-top: var(--nav-height);
+    background-color: var(--warm-cream);
+    color: var(--midnight-black);
+    font-family: var(--font-body);
+    line-height: 1.7;
 }
 
-.header {
-    background-color: #000000;
-    padding: 12px 24px;
-    border-bottom: 1px double white;
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-top: 0;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
 }
 
 .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header & Nav */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--midnight-black);
+    padding: 12px 0;
+    border-bottom: 1px double white;
+}
+
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo-link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .navbar-logo {
-    display: block;
-    width: auto;
     height: 48px;
+    width: auto;
 }
 
 .nav ul {
@@ -51,11 +112,144 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-right: 20px;
 }
 
 .nav a {
     text-decoration: none;
-    color: #E1DCC9;
-    font-family: Inter;
+    color: var(--warm-cream);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background-color: var(--espresso-brown);
+    color: var(--warm-cream);
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-alt {
+    background-color: rgba(65, 45, 21, 0.05); /* Very light walnut tint */
+}
+
+/* Project Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border: var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--walnut-brown);
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--walnut-brown);
+    color: var(--warm-cream);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--espresso-brown);
+}
+
+/* Contact Form Placeholder */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+}
+
+/* Icons (Conceptual) */
+.icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--walnut-brown);
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: var(--border);
+    font-size: 14px;
 }
