@@ -1,255 +1,414 @@
+/*Start of font import*/
+
 @font-face {
-    font-family: "Inter";
-    src: url("fonts/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: italic;
+    src: local('Inter Italic'), local('Inter-Italic'), url('./fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
     font-weight: 100 900;
     font-style: normal;
-    font-display: swap;
+    src: local('Inter'), local('Inter-Regular'), url('./fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('woff2');
 }
 
 @font-face {
-    font-family: "Space Grotesk";
-    src: url("fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
-    font-weight: 300 700;
-    font-style: normal;
+    font-family: 'Inter';
     font-display: swap;
+    font-weight: 100;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-Thin.ttf') format('woff2');
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 300;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_24pt-Light.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-Medium.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-SemiBold.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-Bold.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    font-weight: 900;
+    font-style: normal;
+    src: url('./fonts/Inter/static/Inter_28pt-Black.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: italic;
+    src: local('Space Grotesk'), local('Space Grotesk-Italic'), local('SpaceGrotesk-Italic'), url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal;
+    src: local('Space Grotesk'), local('SpaceGrotesk-Regular'), url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 300;
+    font-style: normal;
+    src: url('./fonts/Space_Grotesk/static/SpaceGrotesk-Light.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+    src: url('./fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+    src: url('./fonts/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+    src: url('./fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('woff2');
+}
+
+/*End of font import*/
+
+/*For reuse across stylesheet*/
 :root {
-    /* Color Palette */
-    --midnight-black: #000000;
-    --espresso-brown: #1F150C;
-    --walnut-brown: #412D15;
-    --warm-cream: #E1DCC9;
-
-    /* Typography */
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    /* Spacing & Borders */
-    --radius: 8px;
-    --border: 1px solid var(--walnut-brown);
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-
-    /* Navbar height for offset */
-    --nav-height: 73px;
+    /* Earthy Dark Minimalist Color Palette */
+    --primary: #000000;
+    --gradient-start: #412D15;
+    --gradient-end: #1F150C;
+    --text-primary: #000000;
+    --text-secondary: #412D15;
+    --bg-primary: #E1DCC9;
+    --bg-secondary: #F9F6F0;
+    --border-color: #412D15;
+    --accent: #412D15;
+    --accent-hover: #2b1e0f;
 }
 
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
     margin: 0;
-    padding-top: var(--nav-height);
-    background-color: var(--warm-cream);
-    color: var(--midnight-black);
-    font-family: var(--font-body);
-    line-height: 1.7;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-    margin-top: 0;
+html {
+    font-size: 16px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--primary);
+}
+
+nav {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Space Grotesk', sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--bg-primary);
+    border-bottom: 1px solid var(--gradient-start);
+}
+
+nav a[href="#"] {
+    cursor: default;
+    opacity: 0.5;
+}
+
+/* Logo */
+.HLogo {
+    display: block;
+    height: 4rem;
+}
+
+/* Hero Section - Programmer Theme */
+.hero {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--bg-primary);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background grid pattern */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    filter: grayscale(20%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.hero-image:hover {
+    filter: grayscale(0%);
+    transform: translateY(-4px);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.code-tag {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--bg-primary);
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
+
+.hero-text h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: var(--bg-primary);
+    letter-spacing: -0.02em;
     line-height: 1.1;
 }
 
-h1 {
-    font-size: 48px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 2rem;
-}
-
-p {
-    font-size: 16px;
-    margin-bottom: 1.5rem;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* Header & Nav */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--midnight-black);
-    padding: 12px 0;
-    border-bottom: 1px double white;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.navbar-logo {
-    height: 48px;
-    width: auto;
-}
-
-.nav ul {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--warm-cream);
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    transition: opacity 0.2s;
-}
-
-.nav a:hover {
-    opacity: 0.8;
-}
-
-/* Hero Section */
-.hero {
-    padding: 100px 0;
-    text-align: center;
-    background-color: var(--espresso-brown);
-    color: var(--warm-cream);
-}
-
-.hero h1 {
-    margin-bottom: 1rem;
-}
-
-.hero p {
+.hero-text h2 {
+    font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
 }
 
-/* Sections */
-section {
-    padding: 80px 0;
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
-.section-alt {
-    background-color: rgba(65, 45, 21, 0.05); /* Very light walnut tint */
-}
-
-/* Project Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    border: var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: var(--walnut-brown);
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.card-title {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Buttons */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--walnut-brown);
-    color: var(--warm-cream);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: var(--radius);
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
+    letter-spacing: 0.05em;
 }
 
-.btn:hover {
-    background-color: var(--espresso-brown);
+.primary-btn {
+    background-color: var(--bg-primary);
+    color: var(--primary);
+    border: 1px solid var(--bg-primary);
 }
 
-/* Contact Form Placeholder */
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
+.primary-btn:hover {
+    background-color: transparent;
+    color: var(--bg-primary);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-.form-group {
-    margin-bottom: 20px;
+.secondary-btn {
+    background-color: transparent;
+    color: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.form-group label {
-    display: block;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 5px;
+.secondary-btn:hover {
+    border-color: var(--bg-primary);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: var(--border);
-    border-radius: var(--radius);
-    font-family: var(--font-body);
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-image {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
 }
 
-/* Icons (Conceptual) */
-.icon {
-    width: 24px;
-    height: 24px;
-    stroke: var(--walnut-brown);
-    stroke-width: 2px;
-    fill: none;
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
 }
 
-/* Footer */
-footer {
-    padding: 40px 0;
-    text-align: center;
-    border-top: var(--border);
-    font-size: 14px;
+/* Responsive Styles */
+@media (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 1rem 1.25rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 12px;
+    }
+
+    nav {
+        padding: 0.75rem 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
 }
