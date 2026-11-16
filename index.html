@@ -1,46 +1,124 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Tyrese Rianne A. Sabal</title>
-    <link rel='stylesheet' href='styles.css'>
-    <link rel="icon" type="image/x-icon" href="assets/MonogramLogo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyrese Sabal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/MonogramLogo.png">
 </head>
 
 <body>
     <main>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <a href="#home"><img src="assets/PortfolioLogo.png" alt="Home" class="HLogo"></a>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contacts">Contact</a></li>
+        <!-- Header / Navigation -->
+        <header class="site-header">
+            <nav class="nav">
+                <a href="#home" class="nav__brand">
+                    <img src="assets/PortfolioLogo.png" alt="Home" class="nav__logo">
+                </a>
+                <ul class="nav__links">
+                    <li><a href="#about" class="nav__link">About me</a></li>
+                    <li><a href="#skills" class="nav__link">Skills</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
+                    <li><a href="#contacts" class="nav__link">Contacts</a></li>
                 </ul>
             </nav>
         </header>
 
-
-
-
+        <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-content">
-                <img src="assets/TyreseSabal.png" alt="Tyrese Sabal" class="hero-image" draggable="false">
-                <div class="hero-text">
-                    <span class="code-tag">&lt;student&gt;</span>
-                    <h1>Tyrese Rianne A. Sabal</h1>
-                    <h2>A Bachelor of Science in Information Technology (BSIT) student at Bukidnon State University.</h2>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn primary-btn">View Code & Projects</a>
-                        <a href="#contacts" class="btn secondary-btn">Get in Touch</a>
-                    </div>
+            <div class="hero__content">
+                <img src="assets/TyreseSabal.png" alt="Photo of a young man" class="hero__photo">
+                <span class="hero__role">&lt;student&gt;</span>
+                <h1 class="hero__name">Tyrese Rianne A. Sabal</h1>
+                <p class="hero__subtitle">First Year - BSIT Student</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section--about">
+            <div class="section__header">
+                <h2 class="section__title">About me</h2>
+            </div>
+            <div class="section__content">
+                <p>I'm currently studying at Bukidnon State University as a first year BSIT student.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section--skills">
+            <div class="section__header">
+                <h2 class="section__title">My Skills</h2>
+            </div>
+            <div class="section__content">
+                <ul class="skills-list">
+                    <li class="skills-list__item">
+                        <span class="skills-list__name">Analytical</span>
+                    </li>
+                    <li class="skills-list__item">
+                        <span class="skills-list__name">Creative</span>
+                    </li>
+                    <li class="skills-list__item">
+                        <span class="skills-list__name">Resourceful</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section section--projects">
+            <div class="section__header">
+                <h2 class="section__title">Projects</h2>
+            </div>
+            <div class="section__content">
+                <div class="projects-grid">
+                    <!-- Project cards will go here -->
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Student Web Portfolio</h3>
+                            <p class="project-card__description">A Web portfolio made only with HTML & CSS.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Tita's Garden Website</h3>
+                            <p class="project-card__description">Website made to promote a local business.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <!-- Contacts Section -->
+        <section id="contacts" class="section section--contacts">
+            <div class="section__header">
+                <h2 class="section__title">Contact Details</h2>
+            </div>
+            <div class="section__content">
+                <ul class="contact-list">
+                    <li class="contact-list__item">
+                        <span class="contact-list__label">Mobile Number:</span>
+                        <a href="tel:+639090958311" class="contact-list__link">09090958311</a>
+                    </li>
+                    <li class="contact-list__item">
+                        <span class="contact-list__label">Email:</span>
+                        <a href="mailto:2601108407@student.buksu.edu.ph" class="contact-list__link">2601108407@student.buksu.edu.ph</a>
+                    </li>
+                    <li class="contact-list__item">
+                        <span class="contact-list__label">Facebook:</span>
+                        <a href="https://www.facebook.com/Ast3r1us/" class="contact-list__link">Sabal Ty</a>
+                    </li>
+                    <li class="contact-list__item">
+                        <span class="contact-list__label">Github:</span>
+                        <a href="https://github.com/sabal-ty" class="contact-list__link">sabal-ty</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
+
 </body>
 
 </html>

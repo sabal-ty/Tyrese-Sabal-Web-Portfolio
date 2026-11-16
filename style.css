@@ -1,0 +1,184 @@
+/* =========================================================================
+   CSS Custom Properties (Colors)
+   ========================================================================= */
+
+:root {
+    /* Primary — main dark color */
+    --color-primary-midnight-black: #000000;
+
+    /* Secondary — darker earthy tone */
+    --color-secondary-espresso-brown: #1F150C;
+
+    /* Accent — lighter earthy tone for highlights */
+    --color-accent-walnut-brown: #412D15;
+
+    /* Background — warm cream for light sections */
+    --color-background-warm-cream: #E1DCC9;
+
+    /* Text — primary text color */
+    --color-text-midnight-black: #000000;
+}
+
+/* =========================================================================
+   Custom Fonts
+   ========================================================================= */
+
+/* Inter (variable) — normal */
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Inter (variable) — italic */
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Space Grotesk (variable) — normal */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+/* Space Grotesk (variable) — italic */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: italic;
+}
+
+/* =========================================================================
+   Base / Reset
+   ========================================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', Inter;
+    background-color: var(--color-text-midnight-black);
+        padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================================================
+   Header / Navigation
+   ========================================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-text-midnight-black);
+    color: var(--color-background-warm-cream);
+    border-bottom: 1px solid var(--color-secondary-espresso-brown);
+    border-radius: 8px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav__logo {
+    width: 10rem;
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+/* =========================================================================
+   Hero Section
+   ========================================================================= */
+
+.hero {
+    background-color: var(--color-primary-midnight-black);
+    border-radius: 10px;
+    padding: 5rem;
+    color: var(--color-background-warm-cream);
+}
+
+.hero__content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero__photo {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid var(--color-accent-walnut-brown);
+    border-radius: 8px;
+}
+
+.hero__role {
+    padding-top: 10px;
+}
+
+.hero__name {}
+
+.hero__subtitle {
+    font-weight: bold;
+}
+
+/* =========================================================================
+   About Section
+   ========================================================================= */
+
+.section--about {
+    background-color: var(--color-background-warm-cream);
+    padding: 5rem;
+}
+/* =========================================================================
+   About Section
+   ========================================================================= */
+
+.section--skills{
+    background-color: var(--color-text-midnight-black);
+    color: var(--color-background-warm-cream);
+    padding: 5rem;
+}
+
+/* =========================================================================
+   Projects Section
+   ========================================================================= */
+
+.section--projects{
+    background-color: var(--color-background-warm-cream);
+    color: var(--color-text-midnight-black);
+    padding: 5rem;
+}
+
+/* =========================================================================
+   Contacts Section
+   ========================================================================= */
+
+.section--contacts{
+    background-color: var(--color-text-midnight-black);
+    color: var(--color-background-warm-cream);
+    padding: 5rem;
+}
