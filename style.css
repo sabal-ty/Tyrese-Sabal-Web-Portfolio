@@ -33,26 +33,16 @@
 
 /* Inter (variable) — italic */
 @font-face {
-    font-family: 'Inter';
+    font-family: 'Inter-Italic', 'Inter';
     src: url('./fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: italic;
 }
 
-/* Space Grotesk (variable) — normal */
+/* Space Grotesk (variable) */
 @font-face {
     font-family: 'Space Grotesk';
     src: url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
     font-weight: 200 800;
     font-style: normal;
-}
-
-/* Space Grotesk (variable) — italic */
-@font-face {
-    font-family: 'Space Grotesk';
-    src: url('./fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
-    font-weight: 200 800;
-    font-style: italic;
 }
 
 /* =========================================================================
@@ -72,8 +62,6 @@ html {
 body {
     font-family: 'Space Grotesk', Inter;
     background-color: var(--color-text-midnight-black);
-    padding: 0;
-    margin: 0;
 }
 a {
     text-decoration: none;
@@ -81,8 +69,7 @@ a {
 }
 
 section {
-    height: 100vh; /*Fallback for old browsers*/
-    min-height: 100dvh;
+    min-height: 100vh; /* ensure each section fills at least viewport height */
 }
 /* =========================================================================
    Header / Navigation
@@ -92,7 +79,6 @@ section {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #000;
     background-color: var(--color-text-midnight-black);
     color: var(--color-background-warm-cream);
     border-bottom: 1px solid var(--color-secondary-espresso-brown);
@@ -136,8 +122,6 @@ section {
 
 .hero {
     background-color: var(--color-primary-midnight-black);
-    border-radius: 10px;
-    padding: 5rem;
     color: var(--color-background-warm-cream);
     display: flex;
     justify-content: center;
@@ -161,7 +145,7 @@ section {
     border: 2px solid var(--color-accent-walnut-brown);
     border-radius: 8px;
     opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .hero__photo:hover{
@@ -188,12 +172,6 @@ section {
     padding: 10px;
     border-radius: 8px;
     opacity: 0.5;
-    transition: box-shadow 0.5s ease, opacity 0.1s ease;
-}
-
-.hero__button:hover{
-    box-shadow: 5px 8px 2px var(--color-accent-walnut-brown);
-    opacity: 1;
 }
 
 .hero__subtitle {
@@ -206,113 +184,251 @@ section {
 
 .section--about {
     background-color: var(--color-background-warm-cream);
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 20px;
-    flex-direction: column;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "box-1 box-1"
+    "box-2 box-3";
 }
 
-.section__header {
+@media (max-width: 640px) {
+    .section--about {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "box-1"
+            "box-2"
+            "box-3";
+    }
 }
-/* =========================================================================
-   About Section
-   ========================================================================= */
+.about__image {
+    border-radius: 150px 12px 0 0;
+    max-height: 30rem;
+    width: auto;
+    height: auto;
+    border: 2px solid var(--color-accent-walnut-brown);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-.section--skills{
-    background-color: var(--color-text-midnight-black);
-    color: var(--color-background-warm-cream);
+.about__image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.about__header{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    flex-direction: column;
 }
 
-.skills-list {
-    list-style-type: none;
+.about__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 50px;
+}
+/* =========================================================================
+   Skills Section
+   ========================================================================= */
+
+.section--skills {
+    background-color: var(--color-text-midnight-black);
+    color: var(--color-background-warm-cream);
+    text-align: center;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section--skills .section__title {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 70rem;
+}
+
+.skill-card {
+    background-color: var(--color-secondary-espresso-brown);
+    border: 1px solid var(--color-accent-walnut-brown);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-background-warm-cream);
+}
+
+.skill-card__icon {
+    font-size: 2.5rem;
+    color: var(--color-background-warm-cream);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.skill-card__name {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+    color: var(--color-background-warm-cream);
+}
+
+.skill-card__desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 /* =========================================================================
    Projects Section
    ========================================================================= */
 
-.section--projects{
+.section--projects {
     background-color: var(--color-background-warm-cream);
     color: var(--color-text-midnight-black);
-    padding: 5rem;
+    padding: 5rem 1rem;
+    text-align: center;
 }
 
 .projects-grid {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.project-card{
+.project-card {
     padding: 2px 16px;
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     border-radius: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    min-height: 400px;
 }
 
-.project-card__content {
+.project-card--empty {
+    opacity: 0.5;
+}
 
+.project-card--empty:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    opacity: 0.6;
 }
 
 .project-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.project-portfolio {
-    width: 20rem;
+.project-portfolio,
+.project-garden {
+    width: 100%;
+    max-width: 400px;
     border-radius: 10px;
-    margin: 1rem;
+    margin: 1rem auto;
 }
 
-.project-garden {
-    width: 25rem;
-    border-radius: 10px;
-    margin: 1rem;
+@media (max-width: 720px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
 }
 /* =========================================================================
    Contacts Section
    ========================================================================= */
 
-.section--contacts{
+.section--contacts {
     background-color: var(--color-text-midnight-black);
     color: var(--color-background-warm-cream);
-    padding: 5rem;
-}
-
-.section__content {
-    display: flex;
-    justify-content: center;
+    padding: 5rem 1rem;
 }
 
 .contact-list {
     gap: 1rem;
     padding: 1rem;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-list__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-list__item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(8px);
+}
+
+.contact-list__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(225, 220, 201, 0.6);
+    min-width: 100px;
 }
 
 .contact-list__link {
-    border: 2px solid var(--color-background-warm-cream);
-    border-radius: 20px;
-    padding: 10px;
-    display: block;
-    transition: 0.3s;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-background-warm-cream);
+    transition: color 0.3s ease;
 }
 
-.contact-list__link:hover{
-    background-color: var(--color-background-warm-cream);
-    color: var(--color-text-midnight-black);
+.contact-list__link:hover {
+    text-decoration: underline;
+}
+
+.contact-list__icon {
+    font-size: 1.25rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.contact-list__item:hover .contact-list__icon {
+    opacity: 1;
 }
 /* =========================================================================
    Footer
