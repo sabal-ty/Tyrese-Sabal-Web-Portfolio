@@ -80,7 +80,10 @@ a {
     color: inherit;
 }
 
-.section__header{}
+section {
+    height: 100vh; /*Fallback for old browsers*/
+    min-height: 100dvh;
+}
 /* =========================================================================
    Header / Navigation
    ========================================================================= */
@@ -129,7 +132,6 @@ a {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    min-height: 700px;
 }
 
 .hero__content {
@@ -163,7 +165,6 @@ a {
 
 .section--about {
     background-color: var(--color-background-warm-cream);
-    min-height: 700px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -186,7 +187,6 @@ a {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    min-height: 700px;
 }
 
 .skills-list {
